@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="exp3.css">
+</head>
+<body>
+  <div class="dashboard">
+    
+   
+    <header class="header">
+      <h1>Admin Dashboard</h1>
+      <button id="themeToggle">🌙 Dark Mode</button>
+    </header>
+
+   
+    <aside class="sidebar">
+      <h2>Navigation</h2>
+    </aside>
+
+    
+    <main class="main">
+      <div class="card">Analytics</div>
+      <div class="card">Users</div>
+      <div class="card">Settings</div>
+    </main>
+
+  </div>
+
+  <script src="exp3.js"></script>
+</body>
+</html>
