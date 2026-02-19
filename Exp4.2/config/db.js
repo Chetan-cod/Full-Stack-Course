@@ -2,13 +2,11 @@ import mongoose from "mongoose";
 
 export const connectDB = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://garg21154_db_user:Chetangarg%4044@cluster0.i8zplof.mongodb.net/Playingcards?retryWrites=true&w=majority&appName=Cluster0"
-    );
+    await mongoose.connect(process.env.MONGO_URI);
 
     console.log("✅ Connected to MongoDB Atlas");
   } catch (error) {
-    console.error("❌ Error connecting to MongoDB:", error.message);
+    console.log("❌ MongoDB Error:", error.message);
     process.exit(1);
   }
 };
