@@ -4,7 +4,7 @@ let redisClient;
 
 export const connectRedis = async () => {
   redisClient = createClient({
-    url: "redis://localhost:6379",
+    url: process.env.REDIS_URL,   // ✅ important
   });
 
   redisClient.on("error", (err) =>

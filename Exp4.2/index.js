@@ -24,7 +24,7 @@ app.use("/api/cards", cardRoutes);
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`);
+  console.log(` Server running at http://localhost:${PORT}`);
 });
 
 
