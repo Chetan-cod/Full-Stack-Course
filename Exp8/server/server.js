@@ -9,8 +9,12 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+// Middleware — allow local dev and deployed frontend
+const allowedOrigins = [
+  'http://localhost:5173',
+  process.env.CLIENT_URL, // e.g. https://your-app.vercel.app
+].filter(Boolean);
+app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(express.json());
 
 // Routes
