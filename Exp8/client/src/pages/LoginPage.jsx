@@ -35,11 +35,15 @@ export default function LoginPage() {
     register,
     handleSubmit,
     setValue,
+    watch,
     formState: { errors },
   } = useForm({
     mode: 'onBlur',
     defaultValues: { email: '', password: '' },
   });
+
+  const emailValue    = watch('email');
+  const passwordValue = watch('password');
 
   const demoCredentials = [
     { label: 'Admin',     email: 'admin@example.com', password: 'admin123', color: '#ff1744', bg: 'rgba(255,23,68,0.08)',   border: 'rgba(255,23,68,0.2)' },
@@ -48,8 +52,8 @@ export default function LoginPage() {
   ];
 
   const fillDemo = (cred) => {
-    setValue('email', cred.email, { shouldValidate: true });
-    setValue('password', cred.password, { shouldValidate: true });
+    setValue('email',    cred.email,    { shouldValidate: true, shouldDirty: true, shouldTouch: true });
+    setValue('password', cred.password, { shouldValidate: true, shouldDirty: true, shouldTouch: true });
   };
 
   const onSubmit = async (formData) => {
@@ -166,6 +170,7 @@ export default function LoginPage() {
               helperText={errors.email?.message}
               disabled={loading}
               sx={{ mb: 2.5 }}
+              InputLabelProps={{ shrink: !!emailValue }}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -192,6 +197,7 @@ export default function LoginPage() {
               helperText={errors.password?.message}
               disabled={loading}
               sx={{ mb: 3 }}
+              InputLabelProps={{ shrink: !!passwordValue }}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
