@@ -1,0 +1,8 @@
+.env
+deploy/ec2/.env
+frontend/node_modules
+frontend/dist
+coverage
+npm-debug.log*
+.DS_Store
+

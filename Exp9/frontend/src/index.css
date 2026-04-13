@@ -1,0 +1,165 @@
+:root {
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: #f7f4ec;
+  background:
+    radial-gradient(circle at top left, rgba(236, 179, 101, 0.35), transparent 30%),
+    radial-gradient(circle at right, rgba(72, 132, 201, 0.3), transparent 35%),
+    linear-gradient(135deg, #0f1722 0%, #1b2a41 52%, #243b53 100%);
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  padding: 2rem;
+  background: rgba(8, 15, 27, 0.58);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 24px 80px rgba(3, 8, 20, 0.35);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: auto -10% -35% auto;
+  width: 280px;
+  height: 280px;
+  border-radius: 999px;
+  background: rgba(236, 179, 101, 0.15);
+  filter: blur(16px);
+}
+
+.eyebrow {
+  display: inline-flex;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(236, 179, 101, 0.14);
+  color: #ffd08a;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 1rem 0 0.75rem;
+  font-size: clamp(2.3rem, 4vw, 4.6rem);
+  line-height: 0.96;
+}
+
+.hero-copy {
+  max-width: 56rem;
+  margin: 0 0 1.5rem;
+  color: rgba(247, 244, 236, 0.82);
+  font-size: 1.02rem;
+}
+
+.stats-grid,
+.feature-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.stats-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.stat-card,
+.feature-card,
+.steps-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: rgba(10, 19, 33, 0.72);
+  padding: 1.25rem;
+}
+
+.stat-card span {
+  display: block;
+  color: rgba(247, 244, 236, 0.68);
+  font-size: 0.88rem;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 1.1rem;
+}
+
+.content-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  grid-template-columns: 1.6fr 1fr;
+}
+
+.feature-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.feature-card h3,
+.steps-card h2 {
+  margin-top: 0;
+}
+
+.feature-card p,
+.steps-card li {
+  color: rgba(247, 244, 236, 0.75);
+}
+
+.steps-card ol {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.steps-card li + li {
+  margin-top: 0.75rem;
+}
+
+.footer-note {
+  margin-top: 1.25rem;
+  color: rgba(247, 244, 236, 0.65);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    width: min(100% - 1rem, 1120px);
+    padding: 1rem 0 2rem;
+  }
+
+  .hero {
+    padding: 1.3rem;
+    border-radius: 22px;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
